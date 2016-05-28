@@ -19,4 +19,9 @@ public class Methods {
 		return creation_date;
 	}
 
+	static String getLocation(JSONObject user) {
+		String location = user.getString("location");
+		return location;
+	}
+
 }

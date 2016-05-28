@@ -26,13 +26,13 @@ public class Homework_main {
 			String creation_date = Methods.creation_date(c_date);
 
 			System.out.println("Message created on "+creation_date);
-			//System.out.println("created at " + c_date);
+			
 
 			String id = Methods.msg_id(statuses);
 			System.out.println("The ID of the message is  " + id);
 			JSONObject entities = statuses.getJSONObject("entities");
 
-			//System.out.println(entities );
+			
 
 
 			JSONArray hashtags = entities.getJSONArray("hashtags");
@@ -46,7 +46,7 @@ public class Homework_main {
 
 
 
-				//JSONArray indices
+				
 			}int retweet_count = statuses.getInt("retweet_count");
 			System.out.println("The message was retweeted "+retweet_count+" times");
 			JSONObject user = statuses.getJSONObject("user");
@@ -56,11 +56,11 @@ public class Homework_main {
 			System.out.println("The message was written by "+name);
 
 			String createdAt = user.getString("created_at");
-			//String new_word = word.substring(word.length() - 3);
+			
 			System.out.println("Member of tweeter since " +createdAt.substring(createdAt.length()-4));
 
 
-			String location = user.getString("location");
+			String location = Methods.getLocation(user);
 
 			System.out.println("located in "+location);
 
